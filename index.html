@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div align="center">
+        <div><img src='cat1.jpg' width="100" height="20" id="showbox1" onclick="changeImg1(1);"/></div>
+
+        <div><img src="mon2.jpg" width="100" height="20" id="showbox2" onclick="changeImg1(2);"/></div>
+
+        <div><img src="pan3.jpg" width="100" height="20" id="showbox3" onclick="changeImg1(3);"/></div>
+
+        <div><img src="cat4.jpg" width="100" height="20" id="showbox4" onclick="changeImg1(4);"/></div>
+
+        <div><img src="mon5.jpg" width="100" height="20" id="showbox5" onclick="changeImg1(5);"/></div>
+</div>
+<script>
+
+    let showBox1 = document.getElementById('showbox1');
+    let showBox2 = document.getElementById('showbox2');
+    let showBox3 = document.getElementById('showbox3');
+    let showBox4 = document.getElementById('showbox4');
+    let showBox5 = document.getElementById('showbox5');
+    let flag11 = 1;
+    let flag22 = 2;
+    let flag33 = 3;
+    let flag44 = 1;
+    let flag55 = 2;
+
+    function displayMessage() {
+        if (flag11 == flag22 && flag11 == flag33 && flag11 == flag44 && flag11 == flag55) {
+            document.getElementById('showbox1').style = "border-right-style: solid;border-left-style: solid;border-top-style: solid;border-color: red;border-width: 1px;";
+            document.getElementById('showbox2').style = "border-left-style: solid;border-right-style: solid;border-color: red;border-width: 1px;";
+            document.getElementById('showbox3').style = "border-left-style: solid;border-right-style: solid;border-color: red;border-width: 1px;";
+            document.getElementById('showbox4').style = "border-left-style: solid;border-right-style: solid;border-color: red;border-width: 1px;";
+            document.getElementById('showbox5').style = "border-bottom-style: solid;border-left-style: solid;border-right-style: solid;border-color: red;border-width: 1px;";
+        } else {
+            document.getElementById('showbox1').style = "";
+            document.getElementById('showbox2').style = "";
+            document.getElementById('showbox3').style = "";
+            document.getElementById('showbox4').style = "";
+            document.getElementById('showbox5').style = "";
+        }
+    }
+
+    function changeImg1(bien) {
+        switch (bien) {
+            case 1:
+                if (flag11 == 1){
+                    showBox1.src = 'mon1.jpg';
+                    flag11 = 2;
+                } else if (flag11 == 2) {
+                    showBox1.src = 'pan1.jpg';
+                    flag11 = 3;
+                } else {
+                    showBox1.src = 'cat1.jpg';
+                    flag11 = 1;
+                }
+                break;
+            case 2:
+                if (flag22 == 1){
+                    showBox2.src = 'mon2.jpg';
+                    flag22 = 2;
+                } else if (flag22 == 2) {
+                    showBox2.src = 'pan2.jpg';
+                    flag22 = 3;
+                } else {
+                    showBox2.src = 'cat2.jpg';
+                    flag22 = 1;
+                }
+                break;
+            case 3:
+                if (flag33 == 1){
+                    showBox3.src = 'mon3.jpg';
+                    flag33 = 2;
+                } else if (flag33 == 2) {
+                    showBox3.src = 'pan3.jpg';
+                    flag33 = 3;
+                } else {
+                    showBox3.src = 'cat3.jpg';
+                    flag33 = 1;
+                }
+                break;
+            case 4:
+                if (flag44 == 1){
+                    showBox4.src = 'mon4.jpg';
+                    flag44 = 2;
+                } else if (flag44 == 2) {
+                    showBox4.src = 'pan4.jpg';
+                    flag44 = 3;
+                } else {
+                    showBox4.src = 'cat4.jpg';
+                    flag44 = 1;
+                }
+                break;
+            case  5:
+                if (flag55 == 1){
+                    showBox5.src = 'mon5.jpg';
+                    flag55 = 2;
+                } else if (flag55 == 2) {
+                    showBox5.src = 'pan5.jpg';
+                    flag55 = 3;
+                } else {
+                    showBox5.src = 'cat5.jpg';
+                    flag55 = 1;
+                }
+                break;
+            default:
+                break;
+        }
+        displayMessage();
+    }
+</script>
+</body>
+</html>
